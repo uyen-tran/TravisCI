@@ -47,6 +47,7 @@ namespace TravisCILab
                     var x = GetInput("Enter x: ");
                     var y = GetInput("Enter y: ");
                     var result = operation(x, y);
+                    var temp = Power(x, y);
                     Console.WriteLine($"Result: {result}");
                 }
                 catch (Exception e)
