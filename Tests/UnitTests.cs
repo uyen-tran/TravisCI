@@ -54,5 +54,29 @@ namespace TravisCILab
             Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, "1"));
             Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, null));
         }
+        
+        [Test]
+        public void Multiply_Valid_Tran()
+        {
+            Assert.AreEqual(2, Program.Multiply("2", "1"));
+            Assert.AreEqual(14, Program.Multiply("7", "2"));
+            Assert.AreEqual(10, Program.Multiply("10", "7"));
+        }
+        
+        [Test]
+        public void Multiply_Invalid_Tran()
+        {
+            Assert.Throws<FormatException>(() => Program.Multiply("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "a"));
+        }
+        
+        [Test]
+        public void Multiply_Null_Tran()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, null));
+        }
     }
 }
